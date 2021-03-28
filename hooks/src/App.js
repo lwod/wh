@@ -1,8 +1,12 @@
-import React, {useState} from "react";
+import React, {useState, useEffect } from "react";
 
 function App() {
   const [type, setType] = useState('users')
-
+    
+    useEffect(()=>{
+        console.log('renderer')
+    })
+    
   return (
     <div>
       <h1>Source: {type}</h1>
