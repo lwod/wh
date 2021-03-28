@@ -12,15 +12,17 @@ const complexComp = (num) =>{
 
 function App() {
   
-  const [number, setNumber] = useState(24)
+  const [number, setNumber] = useState(24);
+  const [colored, setColored] = useState(false)
   
   const computed = complexComp(number)
   
   return (
     <>
-      <h1>Counting property: {number}</h1>
+      <h1>Counting property: {computed}</h1>
       <button className={'btn btn-success'} onClick={()=>{setNumber(prev => prev + 1)}}>Increase</button>
-      <button className={'btn btn-danger'} onClick={()=>{setNumber(prev => prev - 1)}}>Decrease</button>
+        <button className={'btn btn-danger'} onClick={()=>{setNumber(prev => prev - 1)}}>Decrease</button>
+        <button className={'btn btn-warning'} onClick={()=>{setColored(prev => !prev)}}>Change</button>
     
     </>
   );
