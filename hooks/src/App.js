@@ -10,11 +10,16 @@ function App() {
     renderCurrent.current++
     console.log(inputRef.current.value)
   })
+    
+    const focus = ()=>{
+      inputRef.current.focus()
+    }
   
   return (
     <div>
       <h1>Render counter: {renderCurrent.current}</h1>
       <input ref={inputRef} type={'text'} onChange={event=>{setValue(event.target.value)}} value={value}/>
+      <button className={'btn'} onClick={focus}>Focus</button>
     </div>
   );
 }
