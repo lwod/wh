@@ -1,18 +1,25 @@
 import React, {useState, useEffect } from "react";
 
 function App() {
-  const [type, setType] = useState('users')
+    const [pos, setPos] = useState({
+        x:0,
+        y:0,
+    })
     
     useEffect(()=>{
-        console.log('type changes for ',type)
-    },[type])
+       window.addEventListener('mousemove', (event)=>{
+           setPos({
+               x: event.clientX,
+               y: event.clientY,
+           })
+       })
+    },[])
     
   return (
     <div>
-      <h1>Source: {type}</h1>
-      <button onClick={()=>{setType('users')}}>Users</button>
-      <button onClick={()=>{setType('todo')}}>Todo</button>
-      <button onClick={()=>{setType('posts')}}>Posts</button>
+        <pre>
+            {JSON.stringify(pos, null, 2)}
+        </pre>
     </div>
   );
 }
