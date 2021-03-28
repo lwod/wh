@@ -4,7 +4,8 @@ function App() {
     const [counter, setCounter] =  useState(0)
     
     const increment = () =>{
-        setCounter(counter + 1)
+        setCounter(prevCounter => prevCounter + 1)
+        setCounter(prevCounter => prevCounter + 1)
     }
     
     const decrement = () =>{
