@@ -1,8 +1,20 @@
 import React, {useState} from "react";
 
+const complexComp = (num) =>{
+    let i = 0;
+    
+    while (i < 1000000000){
+        i++
+    }
+    
+    return num * 2;
+}
+
 function App() {
   
   const [number, setNumber] = useState(24)
+  
+  const computed = complexComp(number)
   
   return (
     <>
