@@ -4,8 +4,8 @@ function App() {
   const [type, setType] = useState('users')
     
     useEffect(()=>{
-        console.log('renderer')
-    })
+        console.log('type changes for ',type)
+    },[type])
     
   return (
     <div>
