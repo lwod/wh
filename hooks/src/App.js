@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import ItemsList from "./ItemsList";
 
 function App() {
   
@@ -16,6 +17,8 @@ function App() {
       <h1 style={styles}>Element count: {count}</h1>
       <button className={'btn btn-success'} onClick={()=>setCount(prev => prev + 1)}>Increase</button>
       <button className={'btn btn-warning'} onClick={()=>setColored(prev => !prev)}>Change</button>
+      <ItemsList getItems={generateItemsFromAPI}/>
+      
     </>
   );
 }
