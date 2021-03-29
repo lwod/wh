@@ -7,6 +7,10 @@ function App() {
   
   const styles = {color : colored ? 'darkred' : 'black'}
   
+  const generateItemsFromAPI = () => {
+      return new Array(count).fill('').map((_, i) => `Element ${i + 1}`)
+  }
+  
   return (
     <>
       <h1 style={styles}>Element count: {count}</h1>
