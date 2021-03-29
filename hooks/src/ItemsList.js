@@ -7,6 +7,9 @@ export default function ItemsList({getItems}){
 	useEffect(()=>{
 		const newItems = getItems()
 		setItems(newItems)
+		
+		console.log('render')
+		
 	}, [getItems])
 	
 	return(
