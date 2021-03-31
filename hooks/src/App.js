@@ -1,10 +1,4 @@
-import React, {useState, useEffect} from "react";
-
-function useLogger(value){
-  useEffect(()=>{
-    console.log(value)
-  },[value])
-}
+import React, {useState} from "react";
 
 function useInput(initialValue){
   
@@ -21,13 +15,14 @@ function useInput(initialValue){
 
 function App() {
   const input = useInput('')
-  
-  useLogger(input.value)
+  const lastName = useInput('')
   
   return (
     <div className={'container pt-3'}>
       <input type={'text'} {...input}/>
-        <h1>{input.value}</h1>
+      <h1>{input.value}</h1>
+      <input type={'text'} {...lastName}/>
+      <h1>{lastName.value}</h1>
     </div>
   );
 }
