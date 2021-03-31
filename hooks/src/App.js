@@ -26,7 +26,7 @@ function App() {
   
   return (
     <div className={'container pt-3'}>
-      <input type={'text'} value={input.value} onChange={input.onChange}/>
+      <input type={'text'} {...input}/>
         <h1>{input.value}</h1>
     </div>
   );
