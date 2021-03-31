@@ -6,20 +6,28 @@ function useLogger(value){
   },[value])
 }
 
-function App() {
+function useInput(initialValue){
   
-  const [name,setName] = useState('')
+  const [value, setValue] = useState(initialValue)
   
-  const changeHandler = event => {
-    setName(event.target.value)
+  const onChange = event => {
+    setValue(event.target.value)
   }
   
-  useLogger(name)
+  return{
+    value, onChange
+  }
+}
+
+function App() {
+  const input = useInput('')
+  
+  useLogger(input.value)
   
   return (
     <div className={'container pt-3'}>
-      <input type={'text'} onChange={changeHandler}/>
-        <h1>{name}</h1>
+      <input type={'text'} value={input.value} onChange={input.onChange}/>
+        <h1>{input.value}</h1>
     </div>
   );
 }
